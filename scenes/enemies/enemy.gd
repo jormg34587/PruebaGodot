@@ -23,7 +23,7 @@ func _on_hurtbox_area_entered(area):
 	if player.position.y < hurtbox.global_position.y:
 		die()
 
-
+##hola
 func die():
 	animation_player.play("dissapear")
 	set_physics_process(false)

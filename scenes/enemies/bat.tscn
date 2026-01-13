@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bffj0u4q3aije" path="res://scenes/enemies/enemy.tscn" id="1_rx7md"]
 [ext_resource type="Texture2D" uid="uid://d3qulsbp07ngs" path="res://assets/sprites/enemies/bat.png" id="2_om66y"]
-[ext_resource type="Script" path="res://scenes/enemies/bat.gd" id="2_qnqew"]
+[ext_resource type="Script" uid="uid://bq56q03ivdy0w" path="res://scenes/enemies/bat.gd" id="2_qnqew"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfhln"]
 atlas = ExtResource("2_om66y")
