@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://buby5l6b84snf"]
+
+[ext_resource type="PackedScene" uid="uid://bffj0u4q3aije" path="res://scenes/enemies/enemy.tscn" id="1_rx7md"]
+[ext_resource type="Texture2D" uid="uid://d3qulsbp07ngs" path="res://assets/sprites/enemies/bat.png" id="2_om66y"]
+[ext_resource type="Script" path="res://scenes/enemies/bat.gd" id="2_qnqew"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfhln"]
+atlas = ExtResource("2_om66y")
+region = Rect2(0, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6uiu"]
+atlas = ExtResource("2_om66y")
+region = Rect2(46, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23vxi"]
+atlas = ExtResource("2_om66y")
+region = Rect2(92, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk2f5"]
+atlas = ExtResource("2_om66y")
+region = Rect2(138, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihgo7"]
+atlas = ExtResource("2_om66y")
+region = Rect2(184, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mywnq"]
+atlas = ExtResource("2_om66y")
+region = Rect2(230, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm06s"]
+atlas = ExtResource("2_om66y")
+region = Rect2(276, 0, 46, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4t32"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfhln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6uiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23vxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk2f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihgo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mywnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm06s")
+}],
+"loop": true,
+"name": &"bat",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwjgh"]
+size = Vector2(30, 10.5)
+
+[node name="Bat" instance=ExtResource("1_rx7md")]
+script = ExtResource("2_qnqew")
+speed = 40.0
+points = 10
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_p4t32")
+animation = &"bat"
+autoplay = "bat"
+
+[node name="Hurtbox" parent="." index="2"]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, 1.75)
+shape = SubResource("RectangleShape2D_hwjgh")

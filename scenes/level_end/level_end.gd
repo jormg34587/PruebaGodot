@@ -1,0 +1,8 @@
+extends Area2D
+
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
+
+
+func _on_area_entered(area):
+	AudioManager.play_sfx(audio_stream_player_2d, AudioManager.SUCCESS)
+	SignalManager.level_completed.emit()
